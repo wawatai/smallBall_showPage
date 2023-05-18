@@ -1,0 +1,690 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-family: "微軟正黑體";
+}
+
+ol, ul {
+  list-style: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 0px;
+}
+
+select, input {
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+main {
+  display: block;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  background: #f1f1f1;
+}
+html body {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+html body::-webkit-scrollbar {
+  background: transparent;
+  width: 5px;
+  height: 5px;
+}
+html body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+html body::-webkit-scrollbar-thumb {
+  background: #3d3d3d;
+  border-radius: 10px;
+}
+html body header {
+  width: 100%;
+  height: 50px;
+  background: #54609C;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  min-width: 800px;
+  z-index: 2;
+}
+html body header .search {
+  width: auto;
+  height: 50px;
+  padding: 0px 8px 0px 16px;
+  background: transparent;
+  position: relative;
+  float: left;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+html body header .search:hover, html body header .search:active, html body header .search.active {
+  background: #f85148;
+}
+html body header .search:hover i, html body header .search:active i, html body header .search.active i {
+  color: #ffffff;
+}
+html body header .search:hover input, html body header .search:active input, html body header .search.active input {
+  opacity: 1;
+  width: 160px;
+}
+html body header .search i {
+  font-size: 30px;
+  color: #eeeeee;
+}
+html body header .search input {
+  opacity: 0;
+  width: 0px;
+  height: 24px;
+  border-radius: 30px;
+  border: none;
+  vertical-align: super;
+  margin-left: 8px;
+  padding: 6px 10px 3px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+html body header .search input::-webkit-input-placeholder {
+  color: #888888;
+}
+html body header .search input::-moz-placeholder {
+  color: #888888;
+}
+html body header .search input:-ms-input-placeholder {
+  color: #888888;
+}
+html body header .search input::-ms-input-placeholder {
+  color: #888888;
+}
+html body header .search input::placeholder {
+  color: #888888;
+}
+html body header .shoppingcartBtn {
+  width: auto;
+  height: 50px;
+  text-align: center;
+  float: right;
+  background: transparent;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  padding: 0px 20px;
+  position: relative;
+}
+html body header .shoppingcartBtn:hover, html body header .shoppingcartBtn:active, html body header .shoppingcartBtn.active {
+  background: #f85148;
+}
+html body header .shoppingcartBtn:hover i, html body header .shoppingcartBtn:active i, html body header .shoppingcartBtn.active i {
+  color: #ffffff;
+}
+html body header .shoppingcartBtn:hover span, html body header .shoppingcartBtn:active span, html body header .shoppingcartBtn.active span {
+  background: #ffffff;
+  color: #ff0000;
+}
+html body header .shoppingcartBtn i {
+  font-size: 28px;
+  color: #eeeeee;
+  line-height: 50px;
+}
+html body header .shoppingcartBtn span {
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: #ff0000;
+  color: #ffffff;
+  padding: 1px 5px;
+  width: auto;
+  height: auto;
+  border-radius: 30px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+html body header .shoppingcartBtn span.display {
+  display: block;
+}
+html body header .logo {
+  margin: 0px auto;
+  width: 300px;
+  height: 50px;
+  cursor: pointer;
+}
+html body header .logo p {
+  text-align: center;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 50px;
+}
+html body main {
+  width: 100%;
+  min-width: 800px;
+  height: auto;
+  margin-top: 50px;
+  background: #f1f1f1;
+  float: left;
+}
+html body main .left {
+  width: 15%;
+  height: 100%;
+  background: #000000d7;
+  position: fixed;
+  left: 0px;
+  top: 50px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 2;
+}
+html body main .left::-webkit-scrollbar {
+  background: transparent;
+  width: 5px;
+  height: 5px;
+}
+html body main .left::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+html body main .left::-webkit-scrollbar-thumb {
+  background: #3d3d3d;
+  border-radius: 10px;
+}
+html body main .left ul {
+  width: 100%;
+  height: auto;
+  padding: 30px 0px 60px;
+}
+html body main .left ul li {
+  width: 100%;
+  height: auto;
+  color: #888888;
+  padding: 10px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: nowrap;
+}
+html body main .left ul li:hover, html body main .left ul li:active, html body main .left ul li.active {
+  color: #fff;
+}
+html body main .left ul li:hover span, html body main .left ul li:active span, html body main .left ul li.active span {
+  opacity: 1;
+}
+html body main .left ul li span {
+  opacity: 0;
+  display: inline-block;
+  vertical-align: top;
+  width: 8px;
+  height: 18px;
+  background: #44ff16;
+  margin-left: 10px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+html body main .left ul li.disable {
+  color: #3d3d3d;
+  pointer-events: none;
+}
+html body main .fakeLeft {
+  width: 15%;
+  height: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background: #ffffff;
+  z-index: 1;
+}
+html body main .mainBox {
+  width: 85%;
+  height: 100%;
+  font-size: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1% 1% 0px;
+  float: right;
+}
+html body main .mainBox::-webkit-scrollbar {
+  background: transparent;
+  width: 5px;
+}
+html body main .mainBox::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+html body main .mainBox::-webkit-scrollbar-thumb {
+  background: #4556b1;
+  border-radius: 10px;
+}
+html body main .mainBox div {
+  display: inline-block;
+  width: 49.397%;
+  height: 0px;
+  padding-bottom: 30%;
+  margin-bottom: 1%;
+  position: relative;
+  vertical-align: top;
+}
+html body main .mainBox div:nth-of-type(even) {
+  margin-left: 1.208%;
+}
+html body main .mainBox div a {
+  display: block;
+  width: 100%;
+  height: 0px;
+  padding-bottom: 52%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+html body main .mainBox div h1 {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 15px;
+  font-weight: bold;
+}
+html body main .mainBox div span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -75%);
+          transform: translate(-50%, -75%);
+  width: auto;
+  height: auto;
+  color: #b6c3ff;
+  font-size: 3vw;
+  z-index: 10;
+  border: solid 1px #54609c;
+  padding: 5px 20px 15px;
+  background: #54609c85;
+  text-align: center;
+  pointer-events: none;
+}
+html body main .mainBox div p {
+  display: inline-block;
+  border: solid 1px #7e94ff;
+  border-radius: 30px;
+  padding: 4px 12px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#798de0), to(#4e4db7));
+  background: linear-gradient(to bottom, #798de0 0%, #4e4db7 100%);
+  color: #fff;
+  margin-left: 5px;
+}
+html body main .mainBox div p.active {
+  background: -webkit-gradient(linear, left bottom, left top, from(#b81a12), to(#f53d33));
+  background: linear-gradient(to top, #b81a12 0%, #f53d33 100%);
+  border-color: #f53d33;
+}
+html body main .mainBox div p.active label i {
+  display: block;
+}
+html body main .mainBox div p label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #f1f1f1;
+  border-radius: 30px;
+  border: solid 1px #828282;
+  -webkit-transition: 0.1s all;
+  transition: 0.1s all;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+}
+html body main .mainBox div p label input {
+  display: none;
+}
+html body main .mainBox div p label:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+html body main .mainBox div p label i {
+  display: none;
+  font-size: 0.7vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #4556b1;
+}
+html body main .mainBox div.disable a {
+  -webkit-filter: brightness(0.2);
+          filter: brightness(0.2);
+  pointer-events: none;
+}
+html body main .mainBox div.disable h1 {
+  height: 36px;
+  line-height: 36px;
+}
+html body main .mainBox div.disable h1 p {
+  display: none;
+}
+html body main .filter {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: #000000d7;
+  z-index: 20;
+}
+html body main .shoppingcart {
+  display: none;
+  position: fixed;
+  width: 79%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #f1f1f1;
+  border: solid 1px #ffffff;
+  border-radius: 8px;
+  z-index: 30;
+}
+html body main .shoppingcart .cancelBtn {
+  width: 50px;
+  height: 50px;
+  background: #f1f1f1;
+  border: solid 2px #a9b4e6;
+  border-radius: 30px;
+  position: absolute;
+  right: -25px;
+  top: -25px;
+  z-index: 2;
+}
+html body main .shoppingcart .cancelBtn::before {
+  content: "";
+  width: 5px;
+  height: 34px;
+  background: #4d5788;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  top: 7px;
+  right: 20px;
+}
+html body main .shoppingcart .cancelBtn::after {
+  content: "";
+  width: 5px;
+  height: 34px;
+  background: #4d5788;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: absolute;
+  top: 7px;
+  left: 20px;
+}
+html body main .shoppingcart h1 {
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: #4d5788;
+  border-radius: 8px 8px 0px 0px;
+}
+html body main .shoppingcart .shoppingWindow {
+  width: 98%;
+  height: 100%;
+  overflow: auto;
+  margin: 0px auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 60px 1% 1%;
+  font-size: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+html body main .shoppingcart .shoppingWindow::-webkit-scrollbar {
+  background: transparent;
+  width: 5px;
+}
+html body main .shoppingcart .shoppingWindow::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+html body main .shoppingcart .shoppingWindow::-webkit-scrollbar-thumb {
+  background: #4556b1;
+  border-radius: 10px;
+}
+html body main .shoppingcart .shoppingWindow div {
+  display: none;
+  position: relative;
+  width: 32%;
+  height: 0px;
+  padding-bottom: 16%;
+  margin-top: 1%;
+}
+html body main .shoppingcart .shoppingWindow div.display {
+  display: block;
+}
+html body main .shoppingcart .shoppingWindow div button {
+  width: 30px;
+  height: 30px;
+  background: #f1f1f1;
+  border: solid 2px #a9b4e6;
+  border-radius: 30px;
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  z-index: 2;
+}
+html body main .shoppingcart .shoppingWindow div button:active, html body main .shoppingcart .shoppingWindow div button.active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+html body main .shoppingcart .shoppingWindow div button::before {
+  content: "";
+  width: 3px;
+  height: 18px;
+  background: #4d5788;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  top: 4px;
+  right: 12px;
+}
+html body main .shoppingcart .shoppingWindow div button::after {
+  content: "";
+  width: 3px;
+  height: 18px;
+  background: #4d5788;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: absolute;
+  top: 4px;
+  left: 12px;
+}
+html body main .shoppingcart .shoppingWindow s {
+  width: 32%;
+}
+html body main .shoppingcart .shoppingWindow s:nth-of-type(1) {
+  display: none;
+}
+html body main .gotop {
+  background: #ffffff;
+  border: solid 2px #828282;
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  position: fixed;
+  right: 5px;
+  bottom: 3%;
+  text-align: center;
+}
+html body main .gotop i {
+  font-size: 30px;
+  color: #41515d;
+  line-height: 45px;
+}
+
+.lb-dataContainer {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 0px !important;
+}
+
+.lb-close {
+  width: 40px !important;
+  height: 40px !important;
+  background-size: 100% !important;
+  position: absolute;
+  top: -7px;
+  right: 0px;
+}
+
+.lb-caption {
+  font-size: 18px !important;
+}
+
+@media screen and (max-width: 1570px) {
+  html body main .mainBox div h1 {
+    bottom: 2%;
+  }
+}
+@media screen and (max-width: 1240px) {
+  html body main .mainBox div h1 {
+    bottom: 0%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  html body main .left {
+    min-width: 140px;
+  }
+  html body main .fakeLeft {
+    min-width: 150px;
+    width: 0%;
+  }
+  html body main .mainBox div {
+    width: 100%;
+    padding-bottom: 60%;
+  }
+  html body main .mainBox div:nth-of-type(even) {
+    margin-left: 0%;
+  }
+  html body main .mainBox div h1 {
+    bottom: 2%;
+  }
+}
+@media screen and (max-width: 980px) {
+  html body main .shoppingcart .shoppingWindow div {
+    width: 95%;
+    padding-bottom: 45%;
+    margin-top: 3%;
+  }
+
+  .lb-dataContainer {
+    top: -55px;
+  }
+
+  .lb-outerContainer {
+    width: 90% !important;
+  }
+
+  .lb-image {
+    width: 100% !important;
+  }
+
+  .lb-close {
+    width: 50px !important;
+    height: 50px !important;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+
+  .lightbox {
+    top: 120px !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  html body main .mainBox div span {
+    min-width: 105px;
+    min-height: 24px;
+    font-size: 23px;
+  }
+  html body main .mainBox div h1 p label i {
+    font-size: 12px;
+    left: 47%;
+    top: 51%;
+  }
+}

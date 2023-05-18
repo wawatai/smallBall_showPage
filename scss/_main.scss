@@ -1,0 +1,757 @@
+html {
+    width: 100%;
+    height: 100%;
+    background: #f1f1f1;
+
+    body {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+            background: transparent;
+            width: 5px;
+            height: 5px;
+        }
+    
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background: #3d3d3d;
+            border-radius: 10px;
+        }
+
+        //header
+        header {
+            width: 100%;
+            height: 50px;
+            // background: #FF574D;
+            background: #54609C;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            min-width: 800px;
+            z-index: 2;
+
+            //搜尋按鈕
+            .search {
+                width: auto;
+                height: 50px;
+                padding: 0px 8px 0px 16px;
+                background: transparent;
+                position: relative;
+                float: left;
+                transition: 0.3s all;
+
+                &:hover,&:active,&.active {
+                    // background: #54609C;
+                    background: #f85148;
+
+                    i {
+                        color: #ffffff;
+                    }
+
+                    input {
+                        opacity: 1;
+                        width: 160px;
+                    }
+                }
+
+                i {
+                    font-size: 30px;
+                    color: #eeeeee;
+                }
+
+                input {
+                    opacity: 0;
+                    width: 0px;
+                    height: 24px;
+                    border-radius: 30px;
+                    border: none;
+                    vertical-align: super;
+                    margin-left: 8px;
+                    padding: 6px 10px 3px;
+                    transition: 0.2s all;
+
+                    &::placeholder {
+                        color: #888888;
+                    }
+                }
+            }
+
+            //購物車按鈕
+            .shoppingcartBtn {
+                width: auto;
+                height: 50px;
+                text-align: center;
+                float: right;
+                background: transparent;
+                transition: 0.2s all;
+                padding: 0px 20px;
+                position: relative;
+
+                &:hover,&:active,&.active {
+                    background: #f85148;
+
+                    i {
+                        color: #ffffff;
+                    }
+
+                    span {
+                        background: #ffffff;
+                        color: #ff0000;
+                    }
+                }
+
+                i {
+                    font-size: 28px;
+                    color: #eeeeee;
+                    line-height: 50px;
+                }
+
+                span {
+                    display: none;
+                    position: absolute;
+                    right: 5px;
+                    top: 5px;
+                    background: #ff0000;
+                    color: #ffffff;
+                    padding: 1px 5px;
+                    width: auto;
+                    height: auto;
+                    border-radius: 30px;
+                    transition: 0.2s all;
+
+                    &.display {
+                        display: block;
+                    }
+                }
+            }
+
+            .logo {
+                margin: 0px auto;
+                width: 300px;
+                height: 50px;
+                cursor: pointer;
+                
+                p {
+                    text-align: center;
+                    color: #ffffff;
+                    font-size: 28px;
+                    font-weight: bold;
+                    line-height: 50px;
+                }
+            }
+        }
+
+        //main
+        main {
+            width: 100%;
+            min-width: 800px;
+            height: auto;
+            margin-top: 50px;
+            background: #f1f1f1;
+            float: left;
+
+            //左列
+            .left {
+                width: 15%;
+                height: 100%;
+                background: #000000d7;
+                position: fixed;
+                left: 0px;
+                top: 50px;
+                overflow-x: hidden;
+                overflow-y: auto;
+                z-index: 2;
+
+                &::-webkit-scrollbar {
+                    background: transparent;
+                    width: 5px;
+                    height: 5px;
+                }
+            
+                &::-webkit-scrollbar-track {
+                    background: #f1f1f1;
+                    border-radius: 10px;
+                }
+            
+                &::-webkit-scrollbar-thumb {
+                    background: #3d3d3d;
+                    border-radius: 10px;
+                }
+
+                ul {
+                    width: 100%;
+                    height: auto;
+                    padding: 30px 0px 60px;
+
+                    li {
+                        width: 100%;
+                        height: auto;
+                        color: #888888;
+                        padding: 10px 25px;
+                        font-size: 16px;
+                        cursor: pointer;
+                        transition: 0.2s all;
+                        user-select: none;
+                        white-space: nowrap;
+
+                        &:hover,&:active,&.active {
+                            color: #fff;
+
+                            span {
+                                opacity: 1;
+                            }
+                        }
+
+                        span {
+                            opacity: 0;
+                            display: inline-block;
+                            vertical-align: top;
+                            width: 8px;
+                            height: 18px;
+                            background: #44ff16;
+                            margin-left: 10px;
+                            transition: 0.2s all;
+                        }
+
+                        &.disable {
+                            color: #3d3d3d;
+                            pointer-events: none;
+                        }
+                    }
+                }
+            }
+
+            //假左列
+            .fakeLeft {
+                width: 15%;
+                height: 100%;
+                position: fixed;
+                left: 0px;
+                top: 0px;
+                background: #ffffff;
+                z-index: 1;
+            }
+
+            //主區域
+            .mainBox {
+                width: 85%;
+                height: 100%;
+                font-size: 0px;
+                box-sizing: border-box;
+                padding: 1% 1% 0px;
+                float: right;
+
+                &::-webkit-scrollbar {
+                    background: transparent;
+                    width: 5px;
+                }
+            
+                &::-webkit-scrollbar-track {
+                    background: #f1f1f1;
+                    border-radius: 10px;
+                }
+            
+                &::-webkit-scrollbar-thumb {
+                    background: #4556b1;
+                    border-radius: 10px;
+                }
+                
+                div {
+                    display: inline-block;
+                    width: 49.397%;
+                    height: 0px;
+                    padding-bottom: 30%;
+                    margin-bottom: 1%;
+                    position: relative;
+                    vertical-align: top;
+
+                    &:nth-of-type(even) {
+                        margin-left: 1.208%;
+                    }
+
+                    a {
+                        display: block;
+                        width: 100%;
+                        height: 0px;
+                        padding-bottom: 52%;
+                        border-radius: 5px;
+                        overflow: hidden;
+                    }
+                    
+                    h1 {
+                        position: absolute;
+                        bottom: 5%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        font-size: 15px;
+                        font-weight: bold;
+                    }
+
+                    span {
+                        display: block;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%,-75%);
+                        width: auto;
+                        height: auto;
+                        color: #b6c3ff;
+                        font-size: 3vw;
+                        z-index: 10;
+                        border: solid 1px #54609c;
+                        padding: 5px 20px 15px;
+                        background: #54609c85;
+                        text-align: center;
+                        pointer-events: none;
+                    }
+
+                    p {
+                        display: inline-block;
+                        border: solid 1px #7e94ff;
+                        border-radius: 30px;
+                        padding: 4px 12px;
+                        background: linear-gradient(to bottom,#798de0 0%,#4e4db7 100%);
+                        color: #fff;
+                        margin-left: 5px;
+
+                        &.active {
+                            background: linear-gradient(to top,#b81a12 0%,#f53d33 100%);
+                            border-color: #f53d33;
+
+                            label {
+
+                                i {
+                                    display: block;
+                                }
+                            }
+                        }
+
+                        label {
+                            display: inline-block;
+                            width: 20px;
+                            height: 20px;
+                            background: #f1f1f1;
+                            border-radius: 30px;
+                            border: solid 1px #828282;
+                            transition: 0.1s all;
+                            cursor: pointer;
+                            vertical-align: middle;
+                            position: relative;
+                            
+                            input {
+                                display: none;
+                            }
+
+                            &:active {
+                                transform: scale(0.9);
+                            }
+    
+                            i {
+                                display: none;
+                                font-size: 0.7vw;
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%,-50%);
+                                color: #4556b1;
+                            }
+                        }
+                    }
+
+                    &.disable {
+                        
+                        a {
+                            filter: brightness(0.2);
+                            pointer-events: none;
+                        }
+
+                        h1 {
+                            height: 36px;
+                            line-height: 36px;
+
+                            p {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //黑幕
+            .filter {
+                display: none;
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                background: #000000d7;
+                z-index: 20;
+            }
+
+            //購物車
+            .shoppingcart {
+                display: none;
+                position: fixed;
+                width: 79%;
+                height: 90%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background: #f1f1f1;
+                border: solid 1px #ffffff;
+                border-radius: 8px;
+                z-index: 30;
+
+                //取消按鈕
+                .cancelBtn {
+                    width: 50px;
+                    height: 50px;
+                    background: #f1f1f1;
+                    border: solid 2px #a9b4e6;
+                    border-radius: 30px;
+                    position: absolute;
+                    right: -25px;
+                    top: -25px;
+                    z-index: 2;
+
+                    &::before {
+                        content: "";
+                        width: 5px;
+                        height: 34px;
+                        background: #4d5788;
+                        transform: rotate(45deg);
+                        position: absolute;
+                        top: 7px;
+                        right: 20px;
+                    }
+
+                    &::after {
+                        content: "";
+                        width: 5px;
+                        height: 34px;
+                        background: #4d5788;
+                        transform: rotate(-45deg);
+                        position: absolute;
+                        top: 7px;
+                        left: 20px;
+                    }
+                }
+
+                //標題
+                h1 {
+                    text-align: center;
+                    width: 100%;
+                    height: 50px;
+                    line-height: 50px;
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: #ffffff;
+                    position: fixed;
+                    top: 0px;
+                    left: 0px;
+                    background: #4d5788;
+                    border-radius: 8px 8px 0px 0px;
+                }
+
+                //選購窗
+                .shoppingWindow {
+                    width: 98%;
+                    height: 100%;
+                    overflow: auto;
+                    margin: 0px auto;
+                    box-sizing: border-box;
+                    padding: 60px 1% 1%;
+                    font-size: 0px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+
+                    &::-webkit-scrollbar {
+                        background: transparent;
+                        width: 5px;
+                    }
+                
+                    &::-webkit-scrollbar-track {
+                        background: #f1f1f1;
+                        border-radius: 10px;
+                    }
+                
+                    &::-webkit-scrollbar-thumb {
+                        background: #4556b1;
+                        border-radius: 10px;
+                    }
+
+                    div {
+                        display: none;
+                        position: relative;
+                        width: 32%;
+                        height: 0px;
+                        padding-bottom: 16%;
+                        margin-top: 1%;
+
+                        &.display {
+                            display: block;
+                        }
+
+                        button {
+                            width: 30px;
+                            height: 30px;
+                            background: #f1f1f1;
+                            border: solid 2px #a9b4e6;
+                            border-radius: 30px;
+                            position: absolute;
+                            right: -15px;
+                            top: -15px;
+                            z-index: 2;
+
+                            &:active,&.active {
+                                transform: scale(0.9);
+                            }
+
+                            &::before {
+                                content: "";
+                                width: 3px;
+                                height: 18px;
+                                background: #4d5788;
+                                transform: rotate(45deg);
+                                position: absolute;
+                                top: 4px;
+                                right: 12px;
+                            }
+
+                            &::after {
+                                content: "";
+                                width: 3px;
+                                height: 18px;
+                                background: #4d5788;
+                                transform: rotate(-45deg);
+                                position: absolute;
+                                top: 4px;
+                                left: 12px;
+                            }
+                        }
+                    }
+
+                    s {
+                        width: 32%;
+
+                        &:nth-of-type(1) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            //回到頂端按鈕
+            .gotop {
+                background: #ffffff;
+                border: solid 2px #828282;
+                width: 50px;
+                height: 50px;
+                border-radius: 30px;
+                position: fixed;
+                right: 5px;
+                bottom: 3%;
+                text-align: center;
+
+                i {
+                    font-size: 30px;
+                    color: #41515d;
+                    line-height: 45px;
+                }
+            }
+        }
+    }
+}
+
+.lb-dataContainer {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0px !important;
+}
+
+.lb-close {
+    width: 40px !important;
+    height: 40px !important;
+    background-size: 100% !important;
+    position: absolute;
+    top: -7px;
+    right: 0px;
+}
+
+.lb-caption {
+    font-size: 18px !important;
+}
+
+@media screen and(max-width: 1570px) {
+    html {
+
+        body {
+
+            main {
+
+                .mainBox {
+
+                    div {
+
+
+                        h1 {
+                            bottom: 2%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 1240px) {
+    html {
+
+        body {
+
+            main {
+
+                .mainBox {
+
+                    div {
+
+
+                        h1 {
+                            bottom: 0%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 1100px) {
+    html {
+
+        body {
+
+            main {
+
+                .left {
+                    min-width: 140px;
+                }
+
+                .fakeLeft {
+                    min-width: 150px;
+                    width: 0%;
+                }
+
+                .mainBox {
+
+                    div {
+                        width: 100%;
+                        padding-bottom: 60%;
+
+                        &:nth-of-type(even) {
+                            margin-left: 0%;
+                        }
+
+                        h1 {
+                            bottom: 2%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 980px) {
+    html {
+
+        body {
+
+            main {
+
+                .shoppingcart {
+
+                    .shoppingWindow {
+
+                        div {
+                            width: 95%;
+                            padding-bottom: 45%;
+                            margin-top: 3%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .lb-dataContainer {
+        top: -55px;
+    }
+
+    .lb-outerContainer {
+        width: 90% !important;
+    }
+
+    .lb-image {
+        width: 100% !important;
+    }
+
+    .lb-close {
+        width: 50px !important;
+        height: 50px !important;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .lightbox {
+        top: 120px !important;
+    }
+}
+
+@media screen and(max-width: 800px) {
+    html {
+
+        body {
+
+            main {
+
+                .mainBox {
+
+                    div {
+                        
+                        span {
+                            min-width: 105px;
+                            min-height: 24px;
+                            font-size: 23px;
+                        }
+
+                        h1 {
+
+                            p {
+
+                                label {
+
+                                    i {
+                                        font-size: 12px;
+                                        left: 47%;
+                                        top: 51%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
