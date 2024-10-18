@@ -13,12 +13,12 @@ html {
             width: 5px;
             height: 5px;
         }
-    
+
         &::-webkit-scrollbar-track {
             background: #f1f1f1;
             border-radius: 10px;
         }
-    
+
         &::-webkit-scrollbar-thumb {
             background: #3d3d3d;
             border-radius: 10px;
@@ -29,7 +29,7 @@ html {
             width: 100%;
             height: 50px;
             // background: #FF574D;
-            background: #54609C;
+            background: #54609c;
             position: fixed;
             top: 0px;
             left: 0px;
@@ -46,7 +46,9 @@ html {
                 float: left;
                 transition: 0.3s all;
 
-                &:hover,&:active,&.active {
+                &:hover,
+                &:active,
+                &.active {
                     // background: #54609C;
                     background: #f85148;
 
@@ -93,7 +95,9 @@ html {
                 padding: 0px 20px;
                 position: relative;
 
-                &:hover,&:active,&.active {
+                &:hover,
+                &:active,
+                &.active {
                     background: #f85148;
 
                     i {
@@ -136,7 +140,7 @@ html {
                 width: 300px;
                 height: 50px;
                 cursor: pointer;
-                
+
                 p {
                     text-align: center;
                     color: #ffffff;
@@ -173,12 +177,12 @@ html {
                     width: 5px;
                     height: 5px;
                 }
-            
+
                 &::-webkit-scrollbar-track {
                     background: #f1f1f1;
                     border-radius: 10px;
                 }
-            
+
                 &::-webkit-scrollbar-thumb {
                     background: #3d3d3d;
                     border-radius: 10px;
@@ -200,7 +204,9 @@ html {
                         user-select: none;
                         white-space: nowrap;
 
-                        &:hover,&:active,&.active {
+                        &:hover,
+                        &:active,
+                        &.active {
                             color: #fff;
 
                             span {
@@ -251,17 +257,17 @@ html {
                     background: transparent;
                     width: 5px;
                 }
-            
+
                 &::-webkit-scrollbar-track {
                     background: #f1f1f1;
                     border-radius: 10px;
                 }
-            
+
                 &::-webkit-scrollbar-thumb {
                     background: #4556b1;
                     border-radius: 10px;
                 }
-                
+
                 div {
                     display: inline-block;
                     width: 49.397%;
@@ -275,7 +281,7 @@ html {
                         margin-left: 1.208%;
                     }
 
-                    a {
+                    > a {
                         display: block;
                         width: 100%;
                         height: 0px;
@@ -283,7 +289,7 @@ html {
                         border-radius: 5px;
                         overflow: hidden;
                     }
-                    
+
                     h1 {
                         position: absolute;
                         bottom: 5%;
@@ -291,6 +297,30 @@ html {
                         transform: translateX(-50%);
                         font-size: 15px;
                         font-weight: bold;
+                        display: flex;
+                        align-items: center;
+                        a {
+                            display: flex;
+                            border: solid 1px #7e94ff;
+                            border-radius: 30px;
+                            padding: 0 12px;
+                            background: linear-gradient(to bottom, #798de0 0%, #4e4db7 100%);
+                            color: #fff;
+                            margin-left: 5px;
+                            height: 30px;
+                            align-items: center;
+                            text-decoration: none;
+                            &:hover,
+                            &:active,
+                            &.active {
+                                background: linear-gradient(to top, #b81a12 0%, #f53d33 100%);
+                                border-color: #f53d33;
+                            }
+                            &.disable {
+                                filter: brightness(0.2);
+                                pointer-events: none;
+                            }
+                        }
                     }
 
                     span {
@@ -298,7 +328,7 @@ html {
                         position: absolute;
                         left: 50%;
                         top: 50%;
-                        transform: translate(-50%,-75%);
+                        transform: translate(-50%, -75%);
                         width: auto;
                         height: auto;
                         color: #b6c3ff;
@@ -316,16 +346,17 @@ html {
                         border: solid 1px #7e94ff;
                         border-radius: 30px;
                         padding: 4px 12px;
-                        background: linear-gradient(to bottom,#798de0 0%,#4e4db7 100%);
+                        background: linear-gradient(to bottom, #798de0 0%, #4e4db7 100%);
                         color: #fff;
                         margin-left: 5px;
-
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
                         &.active {
-                            background: linear-gradient(to top,#b81a12 0%,#f53d33 100%);
+                            background: linear-gradient(to top, #b81a12 0%, #f53d33 100%);
                             border-color: #f53d33;
 
                             label {
-
                                 i {
                                     display: block;
                                 }
@@ -343,7 +374,7 @@ html {
                             cursor: pointer;
                             vertical-align: middle;
                             position: relative;
-                            
+
                             input {
                                 display: none;
                             }
@@ -351,21 +382,20 @@ html {
                             &:active {
                                 transform: scale(0.9);
                             }
-    
+
                             i {
                                 display: none;
                                 font-size: 0.7vw;
                                 position: absolute;
                                 left: 50%;
                                 top: 50%;
-                                transform: translate(-50%,-50%);
+                                transform: translate(-50%, -50%);
                                 color: #4556b1;
                             }
                         }
                     }
 
                     &.disable {
-                        
                         a {
                             filter: brightness(0.2);
                             pointer-events: none;
@@ -403,7 +433,7 @@ html {
                 height: 90%;
                 top: 50%;
                 left: 50%;
-                transform: translate(-50%,-50%);
+                transform: translate(-50%, -50%);
                 background: #f1f1f1;
                 border: solid 1px #ffffff;
                 border-radius: 8px;
@@ -477,12 +507,12 @@ html {
                         background: transparent;
                         width: 5px;
                     }
-                
+
                     &::-webkit-scrollbar-track {
                         background: #f1f1f1;
                         border-radius: 10px;
                     }
-                
+
                     &::-webkit-scrollbar-thumb {
                         background: #4556b1;
                         border-radius: 10px;
@@ -511,7 +541,8 @@ html {
                             top: -15px;
                             z-index: 2;
 
-                            &:active,&.active {
+                            &:active,
+                            &.active {
                                 transform: scale(0.9);
                             }
 
@@ -592,18 +623,12 @@ html {
     font-size: 18px !important;
 }
 
-@media screen and(max-width: 1570px) {
+@media (max-width: 1570px) {
     html {
-
         body {
-
             main {
-
                 .mainBox {
-
                     div {
-
-
                         h1 {
                             bottom: 2%;
                         }
@@ -614,18 +639,12 @@ html {
     }
 }
 
-@media screen and(max-width: 1240px) {
+@media (max-width: 1240px) {
     html {
-
         body {
-
             main {
-
                 .mainBox {
-
                     div {
-
-
                         h1 {
                             bottom: 0%;
                         }
@@ -636,13 +655,10 @@ html {
     }
 }
 
-@media screen and(max-width: 1100px) {
+@media (max-width: 1100px) {
     html {
-
         body {
-
             main {
-
                 .left {
                     min-width: 140px;
                 }
@@ -653,7 +669,6 @@ html {
                 }
 
                 .mainBox {
-
                     div {
                         width: 100%;
                         padding-bottom: 60%;
@@ -672,17 +687,12 @@ html {
     }
 }
 
-@media screen and(max-width: 980px) {
+@media (max-width: 980px) {
     html {
-
         body {
-
             main {
-
                 .shoppingcart {
-
                     .shoppingWindow {
-
                         div {
                             width: 95%;
                             padding-bottom: 45%;
@@ -718,17 +728,12 @@ html {
     }
 }
 
-@media screen and(max-width: 800px) {
+@media (max-width: 800px) {
     html {
-
         body {
-
             main {
-
                 .mainBox {
-
                     div {
-                        
                         span {
                             min-width: 105px;
                             min-height: 24px;
@@ -736,11 +741,8 @@ html {
                         }
 
                         h1 {
-
                             p {
-
                                 label {
-
                                     i {
                                         font-size: 12px;
                                         left: 47%;
