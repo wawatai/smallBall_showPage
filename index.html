@@ -36,6 +36,7 @@
   <main>
     <div class="left">
       <ul>
+        <li id="btn130">588<span></span></li>
         <li id="btn129">566<span></span></li>
         <li id="btn128">金龜<span></span></li>
         <li id="btn127">金龍<span></span></li>
@@ -171,6 +172,22 @@
     </div>
     <div class="fakeLeft"></div>
     <article class="mainBox">
+      <div id="demo130">
+        <a href="" data-lightbox="demo" data-title=""></a>
+        <h1 class="">
+          588
+          <p>
+            <label>
+              <input type="checkbox">
+              <i class="fas fa-check"></i>
+            </label>
+            pick
+          </p>
+          <a href="https://art-demo.sog99.net/sb_login/588/" class="" target="_blank">
+            link
+          </a>
+        </h1>
+      </div>
       <div id="demo129">
         <a href="" data-lightbox="demo" data-title=""></a>
         <h1 class="">
@@ -2276,6 +2293,44 @@
       <i class="fas fa-arrow-up"></i>
     </button>
   </main>
+
+  <!-- 測試用 -->
+  <!-- <script>
+    fetch('img.php')
+      .then(response => response.json())
+      .then(images => {
+        const gallery = document.querySelector('main .mainBox');
+        console.log(images)
+        images.forEach(src => {
+          const img = src.split("/")[1].split(".")[0]
+          const name = src.split("/")[1].split(".")[0].split("_").join("")
+          //console.log(name)
+          const div = document.createElement('div')
+          div.setAttribute('id', name)
+          div.innerHTML = `
+            <a href="" data-lightbox="demo" data-title="" style="background: url(&quot;./images/${img}.webp&quot;) 0% 0% / cover;"></a>
+              <h1 class="">
+                566
+                <p>
+                  <label>
+                    <input type="checkbox">
+                    <i class="fas fa-check"></i>
+                  </label>
+                  pick
+                </p>
+                <a href="https://art-demo.sog99.net/sb_login/566/" class="" target="_blank">
+                  link
+                </a>
+              </h1>
+              `
+          gallery.appendChild(div)
+        });
+      })
+      .catch(error => {
+        console.error('載入圖片失敗:', error);
+      });
+  </script> -->
 </body>
 
 </html>
+
