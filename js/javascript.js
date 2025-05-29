@@ -1,3 +1,54 @@
+// json獲取生成
+;(async () => {
+  try {
+    const response = await fetch("./img.json")
+    if (!response.ok) {
+      throw new Error("失敗" + response.status)
+    }
+    const images = await response.json()
+    const gallery = document.querySelector("main .mainBox")
+    const list = document.querySelector("main .left ul")
+    images.forEach((src) => {
+      const div = document.createElement("div")
+      div.setAttribute("id", src.id)
+      div.innerHTML = `
+        <a href="./images/${src.id}.webp" data-lightbox="demo" data-title="" style="background: url(&quot;./images/${src.id}.webp&quot;) 0% 0% / cover;"></a>
+        <h1>
+          ${src.name}
+          <p>
+            <label>
+              <input type="checkbox">
+              <i class="fas fa-check"></i>
+            </label>
+            pick
+          </p>
+          <a href="https://art-demo.sog99.net/sb_login/${src.name}/" class="${src.link?"":"disable"}" target="_blank">
+            link
+          </a>
+        </h1>`
+      gallery.appendChild(div)
+      const li = document.createElement("li")
+      li.setAttribute("id", `btn${src.sort}`)
+      li.innerHTML = `${src.name}<span></span>`
+      list.appendChild(li)
+      li.addEventListener("click", () => {
+        window.scrollTo({
+          top: document.querySelector(`#demo_${src.sort}`).offsetTop-60,
+          behavior:"smooth"
+        })
+      })
+    })
+    document.querySelectorAll('input[type="checkbox"]').forEach(input=>{
+      input.addEventListener('change',()=>{
+        input.closest("p").classList.toggle('active')
+      })
+    })
+  } catch (error) {
+    console.error("載入圖片失敗:", error)
+  }
+})()
+
+
 //header按鈕
 $(function () {
   $("header button").click(function () {
@@ -46,20 +97,6 @@ $(function () {
   drag(obj); //傳入的必須是jQuery物件，否則不能呼叫jQuery的自定義函式
 });
 
-//左列點擊時頁面自動定位效果
-$(function () {
-  $("li").each(function (index) {
-    $("#btn" + index + "").click(function () {
-      $("html,body").animate(
-        {
-          scrollTop: $("#demo" + index + "").offset().top - 60,
-        },
-        500
-      );
-    });
-  });
-});
-
 //回到頂端按鈕
 $(function () {
   $(window).scroll(function () {
@@ -100,26 +137,6 @@ $(function () {
 $(function () {
   $('input[type="checkbox"]').change(function () {
     $(this).closest("p").toggleClass("active");
-  });
-});
-
-//html+css自動計算a herf+background
-$(function () {
-  $("li").each(function (index) {
-    $($("#demo" + index + "").children("a")).attr(
-      "href",
-      "./images/demo_" + index + ".webp"
-    );
-    var myIndex = index + 1;
-    $($("#demo" + index + "").children("a")).attr(
-      "data-title",
-      "DEMO_" + myIndex + ""
-    );
-    $($("#demo" + index + "").children("a")).css(
-      "background",
-      "url(./images/demo_" + index + ".webp)"
-    );
-    $($("#demo" + index + "").children("a")).css("background-size", "cover");
   });
 });
 
